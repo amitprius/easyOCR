@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
+        <!-- <script type="text/javascript" src="{{ url_for('static', filename='script/script.js') }}"></script> -->    
+        {% if title %} 
+            <title>{{title}}</title>
+        {% else %}
+            <title>OCR</title>
+        {% endif %}
+
+        <!--Header-->
+        <header id="top_header">
+            <!--Research Topic Name-->
+            <h3>Optical Character Recognition From Image</h3>
+        </header>
+    </head>
+
+    <body>
+        <div id="upload_image_div">
+
+            <form action="{{ url_for('upload_image') }}" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" />
+                <input type="submit"/>
+            </form>
+            <h4>Character Recogniton Output:</h4>
+                <center>
+                    <p>{{ result }}</p>
+                </center>
+        </div>
+
+        <!--footer-->
+        <br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer id="main_footer"> <p> &copy; no_success </p></footer>
+       </body>
+</html>
